@@ -24,22 +24,24 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
+// Type of error: Syntax. The console.log statement is missing closing quotation mark and closing parenthesis.
 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
 // What’s Wrong?
+//Type of error: Runtime. The program cannot multiply a string of the word eight. Should change to either "8" or the number 8.
 
 
 
@@ -50,7 +52,7 @@ for (let i = 0; i < numbers.length; i++) {
 function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
+    if (num % i !== 0) {
       return true;  // Supposed to indicate num is NOT prime
     }
   }
@@ -58,5 +60,8 @@ function isPrime(num) {
 }
 
 console.log(isPrime(7)); // Expected true but gets false
+console.log(isPrime(5));
+console.log(isPrime(13));
 
 // What’s Wrong?
+// Type of error: Logic. If number is only divisible by 1 or itself, the reaminder would not return 0 if divided by 2.  
